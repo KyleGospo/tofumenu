@@ -28,6 +28,10 @@ function _appStore() {
 	Util.spawn(['gnome-software'])
 }
 
+function _steam() {
+	Util.spawn(['steam'])
+}
+
 function _missionControl() {
 	Main.overview.toggle();
 }
@@ -57,7 +61,7 @@ function _logOut() {
 }
 
 function _extensions() {
-	Util.spawn(['gnome-extensions-app'])
+	Util.spawn(['flatpak', 'run', 'com.mattjakeman.ExtensionManager'])
 }
 
 function _middleClick(actor, event) {
@@ -98,20 +102,25 @@ var MenuButton = GObject.registerClass(class FedoraMenu_MenuButton extends Panel
 		this.item1 = new PopupMenu.PopupMenuItem(_('About My System'))
 		this.item2 = new PopupMenu.PopupMenuItem(_('System Settings'))
 		this.item3 = new PopupMenu.PopupSeparatorMenuItem()
-		this.item4 = new PopupMenu.PopupMenuItem(_('Software Center'))
-		this.item5 = new PopupMenu.PopupMenuItem(_('Activities'))
-		this.item6 = new PopupMenu.PopupMenuItem(_('Force Quit App'))
-		this.item7 = new PopupMenu.PopupSeparatorMenuItem()
-		this.item8 = new PopupMenu.PopupMenuItem(_('Terminal'))
-		this.item9 = new PopupMenu.PopupMenuItem(_('Extensions'))
+		this.item4 = new PopupMenu.PopupMenuItem(_('Steam'))
+		this.item5 = new PopupMenu.PopupMenuItem(_('Return to Gaming Mode'))
+		this.item6 = new PopupMenu.PopupSeparatorMenuItem()
+		this.item7 = new PopupMenu.PopupMenuItem(_('Software Center'))
+		this.item8 = new PopupMenu.PopupMenuItem(_('Activities'))
+		this.item9 = new PopupMenu.PopupMenuItem(_('Force Quit App'))
+		this.item10 = new PopupMenu.PopupSeparatorMenuItem()
+		this.item11 = new PopupMenu.PopupMenuItem(_('Terminal'))
+		this.item12 = new PopupMenu.PopupMenuItem(_('Extensions'))
 
 		this.item1.connect('activate', () => _aboutThisDistro())
 		this.item2.connect('activate', () => _systemPreferences())
-		this.item4.connect('activate', () => _appStore())
-		this.item5.connect('activate', () => _missionControl())
-		this.item6.connect('activate', () => _forceQuit())
-		this.item8.connect('activate', () => _terminal())
-		this.item9.connect('activate', () => _extensions())
+		this.item4.connect('activate', () => _steam())
+		this.item5.connect('activate', () => _logOut())
+		this.item7.connect('activate', () => _appStore())
+		this.item8.connect('activate', () => _missionControl())
+		this.item9.connect('activate', () => _forceQuit())
+		this.item11.connect('activate', () => _terminal())
+		this.item12.connect('activate', () => _extensions())
 		this.menu.addMenuItem(this.item1)
 		this.menu.addMenuItem(this.item2)
 		this.menu.addMenuItem(this.item3)
@@ -121,6 +130,9 @@ var MenuButton = GObject.registerClass(class FedoraMenu_MenuButton extends Panel
 		this.menu.addMenuItem(this.item7)
 		this.menu.addMenuItem(this.item8)
 		this.menu.addMenuItem(this.item9)
+		this.menu.addMenuItem(this.item10)
+		this.menu.addMenuItem(this.item11)
+		this.menu.addMenuItem(this.item12)
 
 		//bind middle click option to toggle overview
 		this.connect('button-press-event', _middleClick.bind(this));
