@@ -17,5 +17,5 @@ var DistroIcons = [
     { PATH: '/Resources/mx-logo-symbolic.svg'},
     { PATH: '/Resources/redhat-logo-symbolic.svg'},
     { PATH: '/Resources/voyager-logo-symbolic.svg'},
-		{ PATH: '/Resources/garuda-logo-symbolic.svg'},
+	{ PATH: '/Resources/garuda-logo-symbolic.svg'},
 ]

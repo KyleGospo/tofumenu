@@ -7,7 +7,7 @@
       <description>Change the Menu Button Icon Image.</description>
     </key>
     <key type="i" name="menu-button-icon-size">
-      <default>25</default>
+      <default>20</default>
       <summary>Menu Button Icon Size</summary>
       <description>Change the Menu Button Icon Size.</description>
     </key>
