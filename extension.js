@@ -44,6 +44,10 @@ function _forceQuit() {
 	Util.spawn(['xkill'])
 }
 
+function _systemMonitor() {
+	Util.spawn(['gnome-system-monitor'])
+}
+
 function _sleep() {
 	Util.spawn(['systemctl', 'suspend'])
 }
@@ -106,7 +110,7 @@ var MenuButton = GObject.registerClass(class FedoraMenu_MenuButton extends Panel
 		this.item1 = new PopupMenu.PopupMenuItem(_('Activities'))
 		this.item2 = new PopupMenu.PopupMenuItem(_('Steam'))
 		this.item3 = new PopupMenu.PopupMenuItem(_('Return to Gaming Mode'))
-		this.item4 = new PopupMenu.PopupMenuItem(_('Force Quit App'))
+		this.item4 = new PopupMenu.PopupMenuItem(_('System Monitor'))
 		this.item5 = new PopupMenu.PopupSeparatorMenuItem()
 		this.item6 = new PopupMenu.PopupMenuItem(_('Software Center'))
 		this.item7 = new PopupMenu.PopupMenuItem(_('Lutris'))
@@ -119,7 +123,7 @@ var MenuButton = GObject.registerClass(class FedoraMenu_MenuButton extends Panel
 		this.item1.connect('activate', () => _missionControl())
 		this.item2.connect('activate', () => _steam())
 		this.item3.connect('activate', () => _logOut())
-		this.item4.connect('activate', () => _forceQuit())
+		this.item4.connect('activate', () => _systemMonitor())
 		this.item6.connect('activate', () => _appStore())
 		this.item7.connect('activate', () => _lutris())
 		this.item8.connect('activate', () => _terminal())
