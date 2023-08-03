@@ -65,7 +65,7 @@ function _lockScreen() {
 }
 
 function _logOut() {
-	Util.spawn(['gnome-session-quit'])
+	Util.spawn(['gnome-session-quit', '--logout', '--no-prompt'])
 }
 
 function _extensions() {
