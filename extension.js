@@ -72,6 +72,10 @@ function _extensions() {
 	Util.spawn(['flatpak', 'run', 'com.mattjakeman.ExtensionManager'])
 }
 
+function _yafti() {
+	Util.spawn(['yafti', '--force'])
+}
+
 function _middleClick(actor, event) {
 	// left click === 1, middle click === 2, right click === 3
 	if (event.get_button() === 2) {
@@ -117,8 +121,9 @@ var MenuButton = GObject.registerClass(class FedoraMenu_MenuButton extends Panel
 		this.item8 = new PopupMenu.PopupMenuItem(_('Terminal'))
 		this.item9 = new PopupMenu.PopupSeparatorMenuItem()
 		this.item10 = new PopupMenu.PopupMenuItem(_('Extensions'))
-		this.item11 = new PopupMenu.PopupMenuItem(_('About My System'))
-		this.item12 = new PopupMenu.PopupMenuItem(_('System Settings'))
+		this.item11 = new PopupMenu.PopupMenuItem(_('Yafti'))
+		this.item12 = new PopupMenu.PopupMenuItem(_('About My System'))
+		this.item13 = new PopupMenu.PopupMenuItem(_('System Settings'))
 
 		this.item1.connect('activate', () => _missionControl())
 		this.item2.connect('activate', () => _steam())
@@ -128,8 +133,9 @@ var MenuButton = GObject.registerClass(class FedoraMenu_MenuButton extends Panel
 		this.item7.connect('activate', () => _lutris())
 		this.item8.connect('activate', () => _terminal())
 		this.item10.connect('activate', () => _extensions())
-		this.item11.connect('activate', () => _aboutThisDistro())
-		this.item12.connect('activate', () => _systemPreferences())
+		this.item11.connect('activate', () => _yafti())
+		this.item12.connect('activate', () => _aboutThisDistro())
+		this.item13.connect('activate', () => _systemPreferences())
 		this.menu.addMenuItem(this.item1)
 		this.menu.addMenuItem(this.item2)
 		this.menu.addMenuItem(this.item3)
@@ -142,6 +148,7 @@ var MenuButton = GObject.registerClass(class FedoraMenu_MenuButton extends Panel
 		this.menu.addMenuItem(this.item10)
 		this.menu.addMenuItem(this.item11)
 		this.menu.addMenuItem(this.item12)
+		this.menu.addMenuItem(this.item13)
 
 		//bind middle click option to toggle overview
 		this.connect('button-press-event', _middleClick.bind(this));
