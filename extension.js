@@ -121,7 +121,7 @@ var MenuButton = GObject.registerClass(class FedoraMenu_MenuButton extends Panel
 		this.item8 = new PopupMenu.PopupMenuItem(_('Terminal'))
 		this.item9 = new PopupMenu.PopupSeparatorMenuItem()
 		this.item10 = new PopupMenu.PopupMenuItem(_('Extensions'))
-		this.item11 = new PopupMenu.PopupMenuItem(_('Yafti'))
+		this.item11 = new PopupMenu.PopupMenuItem(_('Bazzite Portal'))
 		this.item12 = new PopupMenu.PopupMenuItem(_('About My System'))
 		this.item13 = new PopupMenu.PopupMenuItem(_('System Settings'))
 
