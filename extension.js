@@ -29,7 +29,7 @@ function _appStore() {
 }
 
 function _steam() {
-	Util.spawn(['steam'])
+	Util.spawn(['bazzite-steam'])
 }
 
 function _lutris() {
