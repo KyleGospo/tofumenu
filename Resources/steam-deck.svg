@@ -44,7 +44,7 @@
      r="28.592899"
      fill="url(#paint0_linear)"
      id="circle237"
-     style="fill:#1a9fff;fill-opacity:1" />
+     style="fill:#ffffff;fill-opacity:1" />
   <defs
      id="defs244">
     <linearGradient
@@ -61,7 +61,7 @@
          id="stop239" />
       <stop
          offset="1"
-         stop-color="#1A9FFF"
+         stop-color="#FFFFFF"
          id="stop241" />
     </linearGradient>
   </defs>
