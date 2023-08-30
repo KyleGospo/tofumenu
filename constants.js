@@ -1,5 +1,5 @@
 var DistroIcons = [
-    { PATH: '/Resources/steam-deck.svg'},
+    { PATH: '/Resources/steam-deck-symbolic.svg'},
     { PATH: '/Resources/steam-deck-color.svg'},
 	{ PATH: '/Resources/fedora-logo-symbolic.svg'},
     { PATH: 'start-here-symbolic'},
