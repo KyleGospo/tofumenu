@@ -69,7 +69,7 @@ function _lockScreen() {
 }
 
 function _logOut() {
-	Util.spawn(['gnome-session-quit', '--logout', '--no-prompt'])
+	Util.spawn(['systemctl', 'start', 'return-to-gamemode.service'])
 }
 
 function _extensions() {
